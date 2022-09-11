@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drop Down List Example</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous">
+    </script> 
+    <script>
+         var allKeywords=[
+                ["Select Keywords:","Select Keywords"],
+                ["auto","It is used for declaring automatic variables."],
+                ["double","It is used for declaring floating type variables."],
+                ["int","It is used for declaring integer type variables."],
+                ["struct","It is a user data type that is used for declaring group of variables."],
+                ["break","It is used for breaking the conditions and statements."],
+                ["else","it is a statement used with if block to define condition."],
+                ["long","It is used to defing the long int variable."],
+                ["switch","It is used to define the switch block."],
+                ["case","It is used to define the case in switch statement."],
+                ["enum","It is used to define the enumerated data type."],
+                ["register","It is used to define the register variables."],
+                ["typedef","It is used to define the explicaite variable."],
+                ["char","It is used to define the character variables."],
+                ["extern","It is used to define the external variables."],
+                ["return","It is used to return a statement in a function."],
+                ["union","It is a data type to store the more then one variable at same location."],
+                ["continue","It is used to skip the some code part of lines."],
+                ["for","It is used to loop a condition or to execute a statement for several times."],
+                ["signed","It is used to define the signed variables."],
+                ["void","It is used to store the blank value in variables."],
+                ["do","It is used with while loop."],
+                ["if","It is used to execute a code at a given condition."],
+                ["static","It is used to define the static variables."],
+                ["while","It is used to execute a line of code untill the condition become false."],
+                ["default","It is used to define the default case for switch statement."],
+                ["goto","It is used to jump the compiler on a give position."],
+                ["sizeof","It is used to find the size of variable."],
+                ["volatile","It is used to define the volatile variable."],
+                ["const","It is used to define a constant variable."],
+                ["float","It is used to define the floating variable."],
+                ["short","It is used to define the short int variable."],
+                ["unsigned","It is used to define the unsigned integer variable."],
+                
+                ];
+
+        function allKey()
+        {
+            /*Prepare option tag*/
+            var option="";
+            for(var i=0;i<allKeywords.length;i+=1)
+            option+='<option value="'+i+'">'+allKeywords[i][0]+'</option>';
+
+            //Set option in select tag
+            document.getElementById("keywords").innerHTML=option;
+        }
+        function displaykeyword()
+        {   
+            var index=parseInt(document.getElementById("keywords").value);
+           
+            document.getElementById("meaning").innerHTML=allKeywords[index][1];
+            
+        }
+    </script>
+    <style>
+        body{
+            background-color:rgba(230, 123, 24, 0.733);
+        }
+    </style>
+     
+</head>
+
+<body onload="allKey();">
+    <div class="container-fluid">
+        <div class="row" style=" background: linear-gradient( rgb(255, 0, 0), yellow,  rgb(247, 0, 255));"><hr/><hr/>
+            <div class="col-sm-3">
+                <img style="height: 100%; width: 100%;" src="C_Keywords.jpg"/>
+            </div>
+            <div class="col-sm-6 text-center" style="background: linear-gradient( rgb(0, 255, 38), yellow,  rgb(0, 255, 229)); font-family:cursive">
+                <br/><h3>32 Keywords in C Programing Language with their Meaning.</h3>
+            </div>
+            <div class="col-sm-3">
+                <img style="height: 100%; width: 100%;" src="C_Keywords.jpg"/>
+            </div><hr/>
+        </div>
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+                <div class="row"><br/><hr/><hr/>
+                    <div class="col-sm-5 text-center" style="background-color:rgb(0, 110, 255);"><br/>
+                        <select id="keywords"class="form-control form-control-lg" onchange="displaykeyword();"></select><br/>
+                    </div>
+
+                    <div class="col-sm-7 text-center" style="color:rgb(0, 16, 246); background-color: rgb(255, 247, 0);"><br/>
+                        <h3 style="font-family:Georgia, 'Times New Roman', Times, serif;" id="meaning">Meaning</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</body>
+
+</html>
